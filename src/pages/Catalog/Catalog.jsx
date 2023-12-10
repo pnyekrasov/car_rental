@@ -1,31 +1,32 @@
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
-import { fetchCatalog } from 'redux/operations';
-import { Car } from 'components/Car/Car';
+
+import { Car } from '../../components/Car/Car';
 import { useSelector } from 'react-redux';
-import { selectCatalog } from 'redux/selectors';
-
-
+import { selectCatalog } from '../../redux/selectors';
+import { fetchCatalog } from '../../redux/operations';
 
 // import { ContactsBook } from './App.staled';
 // import {} from '../ContactList/ContactList.styled';
 
 const Catalog = () => {
   const dispatch = useDispatch();
-  const cars = useSelector(selectCatalog);
- 
 
   useEffect(() => {
     dispatch(fetchCatalog());
   }, [dispatch]);
 
+  const cars = useSelector(selectCatalog);
+  console.log(cars);
+
   return (
     <ul>
-      {cars.map(item => (
-        <li key={item.id}>
-          <Car {...item} />
-        </li>
-      ))}
+      {cars &&
+        cars.map(item => (
+          <li key={item.id}>
+            <Car {...item} />
+          </li>
+        ))}
     </ul>
   );
 };

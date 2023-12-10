@@ -15,7 +15,6 @@ const handleFetchCatalogFulfilled = (state, action) => {
   state.isLoading = false;
   state.error = null;
   state.items = action.payload;
-  console.log(state.items);
 };
 
 const catalogSlice = createSlice({
