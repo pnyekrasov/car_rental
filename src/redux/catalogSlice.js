@@ -11,7 +11,7 @@ const handleRejected = (state, action) => {
   state.error = action.payload;
 };
 
-const handleFetchContactsFulfilled = (state, action) => {
+const handleFetchCatalogFulfilled = (state, action) => {
   state.isLoading = false;
   state.error = null;
   state.items = action.payload;
@@ -29,7 +29,7 @@ const catalogSlice = createSlice({
   extraReducers: builder =>
     builder
       .addCase(fetchCatalog.pending, handlePending)
-      .addCase(fetchCatalog.fulfilled, handleFetchContactsFulfilled)
+      .addCase(fetchCatalog.fulfilled, handleFetchCatalogFulfilled)
       .addCase(fetchCatalog.rejected, handleRejected),
 });
 
