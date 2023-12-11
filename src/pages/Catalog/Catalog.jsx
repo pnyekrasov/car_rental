@@ -21,8 +21,7 @@ const Catalog = () => {
 
   return (
     <ul>
-      {cars &&
-        cars.map(item => (
+      {cars.map(item => (
           <li key={item.id}>
             <Car {...item} />
           </li>
