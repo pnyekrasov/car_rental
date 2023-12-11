@@ -29,18 +29,18 @@ export const Car = ({
 };
 
 
-{/* 
+// {/* 
 
-return (
-  <List>
-    {items.map(item => (
-      <ListItem key={item.id}>
-        <ContactCard>
-          {item.name}:&nbsp;<span>{item.number}</span>
-          <Button type="button" onClick={() => onDelete(item.id)}>
-            Delete
-          </Button>
-        </ContactCard>
-      </ListItem>
-    ))}
-  </List>  */}
+// return (
+//   <List>
+//     {items.map(item => (
+//       <ListItem key={item.id}>
+//         <ContactCard>
+//           {item.name}:&nbsp;<span>{item.number}</span>
+//           <Button type="button" onClick={() => onDelete(item.id)}>
+//             Delete
+//           </Button>
+//         </ContactCard>
+//       </ListItem>
+//     ))}
+//   </List>  */}
