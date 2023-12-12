@@ -8,11 +8,12 @@ export const fetchCatalog = createAsyncThunk(
   async ({ page, limit }, thunkAPI) => {
     try {
       const url = new URL('/adverts');
+      url.searchParams.append('completed', false);
       url.searchParams.append('page', page);
       url.searchParams.append('limit', limit);
       const response = await axios.get(url, { encoding: 'UTF-8' });
         return response.data; 
-         
+
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
     }
