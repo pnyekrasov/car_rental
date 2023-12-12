@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { FaCar } from "react-icons/fa";
 
 import { ModalWindow } from 'components/Modal/Modal';
 
@@ -38,12 +37,14 @@ export const Car = ({
   rentalConditions,
 
 }) => {
-  const [modalOpen, setModalOpen] = useState(false);
-  // const dispatch = useDispatch();
+  const [modalOpen, setModalOpen] = useState(false); 
 
-  // const isClose = () => setModalEditOpen(false);
+  const formatMileage = (number) => {
+    return new Intl.NumberFormat('en-US').format(number);
+    }
 
   const [, city, country] = address.match(/,\s*([^,]+),\s*([^,]+)$/);
+
   return (
     <Item>
       <Photo src={img} alt={make} />
@@ -57,7 +58,7 @@ export const Car = ({
         {city} | {country} | {rentalCompany}
       </Text>
       <p>
-        {type} | {mileage} | {fuelConsumption}
+        {type} | {formatMileage(mileage)} | {fuelConsumption}
       </p>
       <Button type="button" onClick={() => setModalOpen(true)}>
         Learn more
@@ -91,7 +92,7 @@ export const Car = ({
             <Block>{rentalConditions.split("\n")[0].split(": ")[0]}:&nbsp;<Subtitle>{rentalConditions.split("\n")[0].split(": ")[1]}</Subtitle></Block>
             <Block>{rentalConditions.split("\n")[1]}</Block>
             <Block>{rentalConditions.split("\n")[2]}</Block>
-            <Block>Mileage: <Subtitle>{mileage}</Subtitle></Block>
+            <Block>Mileage: <Subtitle>{formatMileage(mileage)}</Subtitle></Block>
             <Block>Price: <Subtitle>{rentalPrice}</Subtitle></Block>
           </Gallery>
         </>

@@ -6,7 +6,7 @@ export const GlobalStyle = createGlobalStyle`
 body {
   margin: 0;
   color: rgba(18, 20, 23, 0.5);
-  font-family: 'Manrope';
+  font-family: 'Manrope', sans-serif;
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
