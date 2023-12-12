@@ -1,5 +1,5 @@
 import { useState } from 'react';
-// import { useDispatch } from 'react-redux';
+import { FaCar } from "react-icons/fa";
 
 import { ModalWindow } from 'components/Modal/Modal';
 
