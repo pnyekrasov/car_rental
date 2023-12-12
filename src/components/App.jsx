@@ -1,7 +1,7 @@
 // import { lazy } from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 
-import Catalog from 'pages/Catalog/Catalog';
+import Catalog from 'pages/CarsList/CarsList';
 import Favorites from 'pages/Favorites/Favorites';
 import Home from 'pages/Home/Home';
 import { SharedLayout } from './SharedLayout/SharedLayout';

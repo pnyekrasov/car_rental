@@ -6,8 +6,7 @@ import {
   Block,
   Button,
   Desc,
-  Gallery,
-  Item,
+  Gallery, 
   Lead,
   ModalPhoto,
   ModalTitle,
@@ -35,7 +34,6 @@ export const Car = ({
   accessories,
   functionalities,
   rentalConditions,
-
 }) => {
   const [modalOpen, setModalOpen] = useState(false); 
 
