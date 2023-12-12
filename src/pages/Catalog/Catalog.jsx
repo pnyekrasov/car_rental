@@ -5,7 +5,7 @@ import { Car } from '../../components/Car/Car';
 import { useSelector } from 'react-redux';
 import { selectCatalog } from '../../redux/selectors';
 import { fetchCatalog } from '../../redux/operations';
-import { Gallery } from './Catalog.styled';
+import { Gallery, Item } from './Catalog.styled';
 
 const Catalog = () => {
   const dispatch = useDispatch();
@@ -16,7 +16,7 @@ const Catalog = () => {
 
 
   useEffect(() => {
-    dispatch(fetchCatalog({ currentPage, limit }))
+    dispatch(fetchCatalog({ page: currentPage, limit }))
   }, [dispatch]);
 
   const cars = useSelector(selectCatalog);
@@ -26,9 +26,9 @@ const Catalog = () => {
   return (
     <Gallery>
       {cars.map(item => (
-          <li key={item.id}>
+          <Item key={item.id}>
             <Car {...item} />
-          </li>
+          </Item>
         ))}
     </Gallery>
   );

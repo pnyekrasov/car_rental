@@ -46,7 +46,7 @@ export const Car = ({
   const [, city, country] = address.match(/,\s*([^,]+),\s*([^,]+)$/);
 
   return (
-    <Item>
+    <>
       <Photo src={img} alt={make} />
       <Title>
         <p>
@@ -97,6 +97,6 @@ export const Car = ({
           </Gallery>
         </>
       </ModalWindow>
-    </Item>
+    </>
   );
 };

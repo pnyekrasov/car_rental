@@ -1,9 +1,5 @@
 import styled from 'styled-components';
 
-export const Item = styled.div`
-  width: 274.25px;
-`;
-
 export const Photo = styled.img`
   height: 268px;
   border-radius: 12px;

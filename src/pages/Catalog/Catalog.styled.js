@@ -9,3 +9,7 @@ export const Gallery = styled.ul`
   padding: 150px 128px;
 `;
 
+
+export const Item = styled.div`
+ width: calc((100% - 87px) / 4);
+`;
