@@ -5,8 +5,7 @@ import { Car } from '../Car/Car';
 import { useSelector } from 'react-redux';
 import { selectCatalog } from '../../redux/selectors';
 import { fetchCatalog } from '../../redux/operations';
-import { Gallery, Item } from './CarsList.styled';
-
+import { BtnLoadMore, Gallery, Item } from './CarsList.styled';
 
 export const CarsList = () => {
   const dispatch = useDispatch();
@@ -15,19 +14,17 @@ export const CarsList = () => {
   const limit = 12;
 
   useEffect(() => {
-    dispatch(fetchCatalog({ page: currentPage, limit }));
+    dispatch(fetchCatalog({ page: currentPage, limit: limit }));
   }, [currentPage, dispatch]);
 
   const cars = useSelector(selectCatalog);
 
-  // const handleLoadMore = () => {
-  //   const nextPage = currentPage + 1;
-  //   dispatch(fetchCatalog({ page: nextPage, limit })).then(data => {
-  //     data.payload.length < 12
-  //       ? console.log('STOP')
-  //       : setCurrentPage(nextPage);
-  //   });
-  // };
+  const handleLoadMore = () => {
+    const nextPage = currentPage + 1;
+    dispatch(fetchCatalog({ page: nextPage, limit: limit })).then(data => {
+      data.payload.length < limit ? console.log('STOP') : setCurrentPage(nextPage);
+    });
+  };
 
   return (
     <Gallery>
@@ -36,10 +33,7 @@ export const CarsList = () => {
           <Car {...item} />
         </Item>
       ))}
+      <BtnLoadMore onClick={handleLoadMore}>Load more</BtnLoadMore>
     </Gallery>
   );
 };
-
-// onClick={handleLoadMore}
-
-
