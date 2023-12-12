@@ -8,3 +8,12 @@ export const HomeList = styled.div`
   margin: 50px 50px;
 `;
 
+export const Title = styled.h1`
+color: black;
+font-size: 36px;
+`;
+
+export const Subtitle = styled.h1`
+color: black;
+font-size: 24px;
+`;

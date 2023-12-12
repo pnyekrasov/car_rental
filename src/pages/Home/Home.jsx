@@ -1,13 +1,13 @@
-import { HomeList } from './Home.styled';
+import { HomeList, Subtitle, Title } from './Home.styled';
 
 const Home = () => {
   return (
     <HomeList>
-      <h1>Car rental&nbsp;</h1>
-      <h2>
+      <Title>Car rental&nbsp;</Title>
+      <Subtitle>
         In our Catalog you can choose cars that suit you. Make your final choice
         on the Favorites page and call us.
-      </h2>
+      </Subtitle>
     </HomeList>
   );
 };

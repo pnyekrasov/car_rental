@@ -5,6 +5,7 @@ import { Car } from '../../components/Car/Car';
 import { useSelector } from 'react-redux';
 import { selectCatalog } from '../../redux/selectors';
 import { fetchCatalog } from '../../redux/operations';
+import { Gallery } from './Catalog.styled';
 
 // import { ContactsBook } from './App.staled';
 // import {} from '../ContactList/ContactList.styled';
@@ -20,13 +21,13 @@ const Catalog = () => {
   console.log(cars);
 
   return (
-    <ul>
+    <Gallery>
       {cars.map(item => (
           <li key={item.id}>
             <Car {...item} />
           </li>
         ))}
-    </ul>
+    </Gallery>
   );
 };
 
